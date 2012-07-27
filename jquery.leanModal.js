@@ -1,27 +1,32 @@
 
 /**
  * @plugin leanModal
- * @description http://leanmodal.finelysliced.com.au/
+ * @description originally from http://leanmodal.finelysliced.com.au/
  **/
 
-(function($){
+(function($) {
+
   $.fn.extend({ 
+  
     leanModal: function(options) {
+  
       var defaults = {
         overlay: 0.5,
         closeButton: '.modal_close'
       };
+  
       var overlay = $('<div id="lean_overlay"></div>');      
       $('body').append(overlay);        
       options = $.extend(defaults, options);
+      
       return this.each(function() {
         var _options = options;
-        $(this).click(function(e) {
+        $(this).live('click', function(e) {
           var modal_id = _options.id;
-          $('#lean_overlay').click(function() { 
+          $('#lean_overlay').live('click', function() { 
             close_modal(modal_id);                    
           });
-          $(_options.closeButton).click(function() { 
+          $(_options.closeButton).live('click', function() { 
             close_modal(modal_id);                    
           });                  
           var modal_height = $(modal_id).outerHeight();
@@ -41,12 +46,18 @@
           e.preventDefault();          
         });     
       });
+      
       function close_modal(modal_id){
         $('#lean_overlay').fadeOut();
-        $(modal_id).css({ 'display' : 'none' });
+        $(modal_id).css({ 
+          'display' : 'none'
+        });
       }
+    
     }
+  
   }); 
+
 })(jQuery);
 
 /* EOF */
