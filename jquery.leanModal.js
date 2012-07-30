@@ -1,6 +1,8 @@
 
 /**
- * @plugin leanModal
+ * @plugin leanerModal
+ * @author Finely Sliced <finelysliced.com.au>
+ * @author Edward Hotchkiss <edwardhotchkiss@me.com>
  * @description originally from http://leanmodal.finelysliced.com.au/
  **/
 
@@ -8,7 +10,7 @@
 
   $.fn.extend({ 
   
-    leanModal: function(options) {
+    leanerModal: function(options) {
   
       var defaults = {
         overlay: 0.5,
