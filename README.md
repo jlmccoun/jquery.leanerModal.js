@@ -1,5 +1,5 @@
 
-# leanModal
+# leanerModal
 
 > A super simple jQuery plugin for modal windows. works with your CSS.
 
@@ -7,8 +7,30 @@ Built for all the short dialogs, alerts, panels and such associated with an app,
 
 **Example:**
 
-```html
+**CSS:**
 
+```css
+
+#lean_overlay {
+  position: fixed;
+  z-index: 100;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  display: none;
+}
+
+.modal {
+  display: none;
+}
+
+```
+
+**HTML:**
+
+```html
 
 <!-- leaner modal -->
 
@@ -36,5 +58,15 @@ Built for all the short dialogs, alerts, panels and such associated with an app,
 <div>
   <input type="button" class="primary" id="something-btn" value="Trigger Modal" />
 </div>
+
+```
+
+**JS:**
+
+```javascript
+
+$('#landing-signup-btn').leanerModal({ 
+  id : '#invite'
+});
 
 ```
